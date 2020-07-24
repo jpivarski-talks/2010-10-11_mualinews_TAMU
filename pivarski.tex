@@ -1,0 +1,91 @@
+\documentclass[compress]{beamer}
+\usepackage{ifthen,verbatim}
+
+\newcommand{\isnote}{}
+\xdefinecolor{lightyellow}{rgb}{1.,1.,0.25}
+\xdefinecolor{darkblue}{rgb}{0.1,0.1,0.7}
+
+%% Uncomment this to get annotations
+%% \def\notes{\addtocounter{page}{-1}
+%%            \renewcommand{\isnote}{*}
+%% 	   \beamertemplateshadingbackground{lightyellow}{white}
+%%            \begin{frame}
+%%            \frametitle{Notes for the previous page (page \insertpagenumber)}
+%%            \itemize}
+%% \def\endnotes{\enditemize
+%% 	      \end{frame}
+%%               \beamertemplateshadingbackground{white}{white}
+%%               \renewcommand{\isnote}{}}
+
+%% Uncomment this to not get annotations
+\def\notes{\comment}
+\def\endnotes{\endcomment}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{\mbox{ } \hfill
+\begin{minipage}{5.5 cm}
+\vspace{-0.75 cm} \small
+\end{minipage} \hfill
+\begin{minipage}{4.5 cm}
+\vspace{-0.75 cm} \small
+\begin{flushright}
+\ifthenelse{\equal{\insertpagenumber}{1}}{}{Jim Pivarski \hspace{0.2 cm} \insertpagenumber\isnote/\pageref{numpages}}
+\end{flushright}
+\end{minipage}\mbox{\hspace{0.2 cm}}\includegraphics[height=1 cm]{../cmslogo} \hspace{0.1 cm} \includegraphics[height=1 cm]{../tamulogo} \hspace{0.01 cm} \vspace{-1.05 cm}}
+
+\newcommand{\s}[1]{{\mbox{\scriptsize #1}}}
+
+\begin{document}
+
+%% \begin{notes}
+%% \item This is the annotated version of my talk.
+%% \item If you want the version that I am presenting, download the one
+%% labeled ``slides'' on Indico (or just ignore these yellow pages).
+%% \item The annotated version is provided for extra detail and a written
+%% record of comments that I intend to make orally.
+%% \item Yellow notes refer to the content on the {\it previous} page.
+%% \item All other slides are identical for the two versions.
+%% \end{notes}
+
+\small
+
+\begin{frame}
+\frametitle{Items for discussion}
+\begin{itemize}
+\item New DT policy: they've opted out of data-taking during cosmics
+   runs (that is, global running when no beam is present)
+\begin{itemize}
+\item we would need to make a presentation to Run Coordination
+  demonstrating the usefulness of cosmic rays for alignment
+\item open question (for us): are the cosmics-during-collisions that
+  we've been taking for the last few months usable?
+\end{itemize}
+
+\item Alignment of endcaps (new procedure, see linked slides) requires
+  more beam-halo than a Tertiary Collimator Triplet (TCT) burst by the
+  LHC can provide.  Will we need to restore
+  beam-halo-during- collisions in the next start-up?
+
+\item Muon-DPG wants to put together a Muon Performance Note (whole
+  system) draft by the end of this year.  Alignment is one of the
+  necessary items--- it makes the most sense to describe only
+  Reference-Target (the only whole-system algorithm).  We'd need:
+\begin{itemize}
+\item MC studies that match what we do in data (including cosmics)
+\item studies with low-momentum and collisions muons
+\end{itemize}
+
+\item Beam-halo alignments of the endcap should be a separate paper
+\end{itemize}
+%% \hspace{-0.83 cm} \textcolor{darkblue}{\Large Outline2}
+\label{numpages}
+\end{frame}
+
+%% \section*{First section}
+%% \begin{frame}
+%% \begin{center}
+%% \Huge \textcolor{blue}{First section}
+%% \end{center}
+%% \end{frame}
+
+\end{document}
